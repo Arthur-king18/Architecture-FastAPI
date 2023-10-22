@@ -16,8 +16,6 @@ class Config(BaseModel):
     DEBUG: bool = True
     APP_HOST: str = "localhost"
     APP_PORT: int = 8000
-    # WRITER_DB_URL: str = f"postgresql+asyncpg://w3c:123123@localhost:5432/glimmer_ai_fastapi"
-    # READER_DB_URL: str = f"postgresql+asyncpg://w3c:123123@localhost:5432/glimmer_ai_fastapi"
     WRITER_DB_URL: str = WRITE_DB_URL
     READER_DB_URL: str = READ_DB_URL
     JWT_SECRET_KEY: str = "threhgrgerg"
@@ -30,8 +28,6 @@ class Config(BaseModel):
 
 
 class DevelopmentConfig(Config):
-    # WRITER_DB_URL: str = f"mysql+aiomysql://root:fastapi@db:5432/fastapi"
-    # READER_DB_URL: str = f"mysql+aiomysql://root:fastapi@db:5432/fastapi"
     WRITER_DB_URL: str = WRITE_DB_URL
     READER_DB_URL: str = READ_DB_URL
     REDIS_HOST: str = "redis"
@@ -45,8 +41,6 @@ class LocalConfig(Config):
 
 class ProductionConfig(Config):
     DEBUG: str = False
-    # WRITER_DB_URL: str = f"mysql+aiomysql://fastapi:fastapi@localhost:3306/prod"
-    # READER_DB_URL: str = f"mysql+aiomysql://fastapi:fastapi@localhost:3306/prod"
     WRITER_DB_URL: str = WRITE_DB_URL
     READER_DB_URL: str = READ_DB_URL
 
